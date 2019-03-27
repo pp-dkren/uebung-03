@@ -1,0 +1,244 @@
+@charset 'utf-8';
+@import 'settings';
+@import 'foundation';
+@import 'motion-ui';
+@include foundation-global-styles;
+@include foundation-grid; // @include foundation-flex-grid;
+@include foundation-typography; //@include foundation-button;
+@include foundation-breadcrumbs; //@include foundation-button-group;
+@include foundation-visibility-classes;
+@include foundation-float-classes; //@include foundation-flex-classes;
+
+// Mixins
+@mixin size($height, $width: $height) {
+  width: $width;
+  height: $height;
+}
+
+// Globals
+.outer {
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.page-wrap {
+  margin: 0 auto;
+  max-width: $global-width;
+}
+
+.section {
+  margin: 0 auto;
+  max-width: rem-calc(1024);
+}
+
+h1,
+h2,
+h3 {
+  text-transform: uppercase;
+}
+
+a {
+  text-decoration: underline;
+}
+
+li a {
+  color: $dark-green;
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: $global-font-size/1.25;
+  line-height: 1.5;
+  margin-top: rem-calc(18);
+}
+
+ul,
+ol {
+  margin-left: 0;
+}
+
+
+// Formatting
+.header,
+.nav-bar,
+.main {
+  position: relative;
+}
+
+.logo {
+  @include size(rem-calc(90));
+  left: rem-calc(10);
+  position: absolute;
+  top: rem-calc(10);
+}
+
+.main-nav {
+  .menu-button {
+    background: $dark-green;
+    @include size(rem-calc(60));
+
+    .menu-button-label {
+      display: none;
+    }
+
+    .symbol {
+      @include size(rem-calc(36));
+      color: #fff;
+    }
+  }
+}
+
+#main-menu {
+  li {
+    @include size(rem-calc(60), auto);
+    border-left: rem-calc(60) solid transparent;
+    padding: $global-padding*.75 $global-padding;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+
+  .orange {
+    border-color: $orange;
+
+    &:focus,
+    &:hover {
+      background-color: $orange-light;
+    }
+  }
+
+  .rose {
+    border-color: $rose;
+
+    &:focus,
+    &:hover {
+      background-color: $rose-light;
+    }
+  }
+
+  .blue {
+    border-color: $blue;
+
+    &:focus,
+    &:hover {
+      background-color: $blue-light;
+    }
+  }
+
+  .beige {
+    border-color: $beige;
+
+    &:focus,
+    &:hover {
+      background-color: $beige-light;
+    }
+  }
+
+  .red {
+    border-color: $red;
+
+    &:focus,
+    &:hover {
+      background-color: $red-light;
+    }
+  }
+
+  .turquoise {
+    border-color: $turquoise;
+
+    &:focus,
+    &:hover {
+      background-color: $turquoise-light;
+    }
+  }
+}
+
+// lang
+.lang-nav {
+  position: absolute;
+  right: rem-calc(20);
+  top: rem-calc(10);
+}
+
+#lang-menu {
+  display: flex;
+  flex-direction: row;
+
+  a {
+    font-size: $global-font-size*.75;
+    margin-left: rem-calc(36);
+
+    &:focus,
+    &:hover {
+      font-weight: bold;
+    }
+  }
+}
+
+
+// Main
+.main {
+  margin: 0 $global-margin;
+  padding-top: $global-padding*2.5;
+}
+
+.fb-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  .symbol {
+    @include size(rem-calc(36));
+    color: $dark-gray;
+  }
+}
+
+.t-items {
+  .t-item {
+    margin-bottom: rem-calc(18);
+    padding: $global-padding*1.25;
+
+    &#schule {
+      background-image: url(../img/schule_320.jpg);
+    }
+
+    &#team {
+      background-image: url(../img/team_320.jpg);
+    }
+
+    &#standort {
+      background-image: url(../img/standort_320.jpg);
+    }
+  }
+
+  .ttl,
+  .ttl-sub {
+    @include size(rem-calc(284));
+  }
+
+  .t-link {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .sub {
+    font-family: $body-alternate-font-family;
+    font-size: rem-calc(20);
+    font-weight: 400;
+    padding-bottom: rem-calc(18);
+  }
+
+  .orange {
+    background-color: $orange;
+  }
+
+  .turquoise {
+    background-color: $turquoise;
+  }
+
+  .red {
+    background-color: $red;
+  }
+}
